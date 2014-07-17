@@ -8,13 +8,13 @@ var bodyParser = require('body-parser');
 var redis = require("redis"),
     client = redis.createClient();
 var routes = require('./routes');
-
+var port = process.env.PORT ? process.env.PORT : 3000;
 // use server 1
 client.select(1);
 
 var app = express();
 var server = http.Server(app);
-server.listen(3000);
+server.listen(port);
 var io = require('socket.io')(server);
 
 var users = {};
