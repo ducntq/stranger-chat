@@ -1,0 +1,82 @@
+h1 {
+    height: 30px;
+    line-height: 30px;
+    padding-left: 10px
+}
+
+#wrapper {
+    position: absolute;
+    top: 60px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+}
+
+#content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 95px;
+    overflow: auto;
+}
+
+#status {
+    height: 25px;
+    line-height: 25px;
+    bottom: 65px;
+    left: 0;
+    right: 0;
+    position: absolute;
+}
+
+#control {
+    bottom: 0;
+    height: 60px;
+    left: 0;
+    right: 0;
+    position: absolute;
+}
+
+#chat-input {
+    bottom: 0;
+    height: 60px;
+    left: 0;
+    right: 120px;
+    top: 0;
+    position: absolute;
+}
+
+#chat-control {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 110px;
+    height: 60px;
+}
+
+#btn-submit {
+    height: 100%;
+    font-size: 18px;
+}
+
+#txt-input {
+    height: 100%;
+}
+
+#btn-new {
+    margin-left: 10px;
+}
+
+.chat-item {
+    padding: 3px 5px;
+    font-size: 14px
+}
+
+.sender, .message {
+    display: inline-block;
+}
+.sender {
+    margin-right: 5px;
+    font-weight: bold;
+}
