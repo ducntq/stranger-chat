@@ -93,6 +93,7 @@ io.on('connection', function(socket) {
 
     socket.on('send_msg', function(data) {
         if (partnerSocket = getPartner()) {
+            partnerSocket.emit('got_msg', data);
         } else {
             noPartner();
         }

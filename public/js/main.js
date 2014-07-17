@@ -78,7 +78,7 @@
             clearTimeout(typingTimeout);
             typingTimeout = setTimeout(function () {
                 socket.emit('not_typing');
-            }, 3000);
+            }, 1000);
             return true;
         } else {
             sendMessage();
