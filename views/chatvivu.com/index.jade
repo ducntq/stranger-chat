@@ -1,13 +1,15 @@
 extends layout
 
 block content
-    h1 Chat với người lạ
+    h1
+        span.hidden-xs Chat với người lạ
         button#btn-new.btn.btn-info Tìm người chat
+        span.visible-xs.online
     #wrapper
         #content
 
         #status Sẵn sàng, bấm nút <strong>Tìm người chat</strong> để bắt đầu
-        #online
+        .online.hidden-xs
         #control
             #chat-input
                 textarea#txt-input.form-control

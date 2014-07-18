@@ -4,7 +4,7 @@
         $btnNew = $('#btn-new'),
         $btnSubmit = $('#btn-submit'),
         $content = $('#content'),
-        $online = $('#online'),
+        $online = $('.online'),
         typingTimeout;
 
     function disableInput(toggle){
