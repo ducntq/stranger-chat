@@ -4,6 +4,7 @@
         $btnNew = $('#btn-new'),
         $btnSubmit = $('#btn-submit'),
         $content = $('#content'),
+        $online = $('#online'),
         typingTimeout;
 
     function disableInput(toggle){
@@ -71,6 +72,14 @@
     socket.on('partner_not_typing', function() {
         $status.text('');
     });
+
+    if ($online.length > 0) {
+        socket.on('online_users', function (data) {
+            $online.text('Online: ' + data.number);
+        });
+    }
+
+    //socket.emit('request_online_users');
 
     $txtInput.on('keydown', function(e) {
         if (e.keyCode !== 13) {

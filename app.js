@@ -19,6 +19,7 @@ var io = require('socket.io')(server);
 
 var users = {};
 var sockets = {};
+var counter = 0;
 var queueSetName = 'queue_users';
 client.flushdb();
 
@@ -65,8 +66,17 @@ app.use(function(err, req, res, next) {
     });
 });
 
+function sendOnlineUsers()
+{
+    io.sockets.emit('online_users', {number: counter});
+}
+
+
 io.on('connection', function(socket) {
     var partnerSocket = null;
+    counter++;
+    sendOnlineUsers();
+
     function getPartner() {
         var partnerId = users[socket.id];
         if (partnerId !== undefined) {
@@ -76,12 +86,10 @@ io.on('connection', function(socket) {
 
         return null;
     }
-
     function noPartner() {
         socket.emit('no_partner');
         partnerSocket = null;
     }
-
     sockets[socket.id] = socket;
     socket.on('ready_to_find', function() {
         if (partnerSocket = getPartner()) {
@@ -124,6 +132,8 @@ io.on('connection', function(socket) {
         client.srem(queueSetName, socket.id);
         if (sockets[socket.id] !== undefined) delete sockets[socket.id];
         delete users[socket.id];
+        counter--;
+        sendOnlineUsers();
     });
 });
 

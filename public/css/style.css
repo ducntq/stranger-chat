@@ -28,6 +28,7 @@ h1 {
     left: 0;
     right: 0;
     position: absolute;
+    font-size: 13px;
 }
 
 #control {
@@ -79,4 +80,14 @@ h1 {
 .sender {
     margin-right: 5px;
     font-weight: bold;
+}
+
+#online {
+    height: 25px;
+    line-height: 25px;
+    bottom: 65px;
+    right: 0;
+    position: absolute;
+    font-weight: bold;
+    font-size: 13px;
 }
