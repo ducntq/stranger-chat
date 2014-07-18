@@ -1,0 +1,9 @@
+#list-news{
+    width: 300px;
+    height:470px;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    border: 1px solid #ccc;
+    background: #fff;
+}
