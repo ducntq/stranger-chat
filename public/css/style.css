@@ -82,12 +82,19 @@ h1 {
     font-weight: bold;
 }
 
-#online {
+.online {
+    font-weight: bold;
+    font-size: 13px;
+}
+
+#online-title {
+    display: inline-block;
+}
+
+#online-status {
     height: 25px;
     line-height: 25px;
     bottom: 65px;
     right: 0;
     position: absolute;
-    font-weight: bold;
-    font-size: 13px;
 }
