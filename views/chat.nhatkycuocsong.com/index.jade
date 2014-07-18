@@ -1,0 +1,35 @@
+extends ../layout
+block header
+    script(type="text/javascript").
+        (function (i, s, o, g, r, a, m) {
+                i['GoogleAnalyticsObject'] = r;
+                i[r] = i[r] || function () {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date();
+                a = s.createElement(o),
+                    m = s.getElementsByTagName(o)[0];
+                a.async = 1;
+                a.src = g;
+                m.parentNode.insertBefore(a, m)
+            })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+            ga('create', 'UA-18780047-13', 'nhatkycuocsong.com');
+            ga('send', 'pageview');
+
+block content
+    h1 Chat với người lạ
+        button#btn-new.btn.btn-info Tìm người chat
+        iframe(src="http://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fchat.nhatkycuocsong.com&width=500&layout=standard&action=like&show_faces=false&share=true",style="border:none; overflow:hidden; height:20px;margin-left: 20px;")
+    #wrapper
+        #content
+        #status Sẵn sàng, bấm nút <strong>Tìm người chat</strong> để bắt đầu
+        #control
+            #chat-input
+                textarea#txt-input.form-control
+            #chat-control
+                button#btn-submit.btn.btn-block.btn-success
+                    | Gửi&nbsp;
+                    i.fa.fa-send
+    #list-news
+        iframe(src="http://www.facebook.com/plugins/likebox.php?href=https%3A%2F%2Fwww.facebook.com%2Fnhatkycuocsong.comm&width=300&height=62&colorscheme=light&show_faces=false&header=false&stream=false&show_border=false",style="border:none; overflow:hidden; height:50px")
+        iframe(src="http://nhatkycuocsong.com/chat-iframe.html",style="border:none; overflow:hidden; height:400px")
