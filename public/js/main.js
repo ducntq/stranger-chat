@@ -5,6 +5,7 @@
         $btnSubmit = $('#btn-submit'),
         $content = $('#content'),
         $online = $('.online'),
+        notification = new Audio('/mp3/notification.mp3'),
         typingTimeout;
 
     function disableInput(toggle){
@@ -58,6 +59,7 @@
     });
 
     socket.on('got_msg', function(data) {
+        if (!document.hasFocus()) notification.play();
         insertMessage(data, false);
     });
 
