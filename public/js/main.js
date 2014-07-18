@@ -8,6 +8,7 @@
         notification = new Audio('/mp3/notification.mp3'),
         typingTimeout;
 
+
     function disableInput(toggle){
         $txtInput.attr('disabled', toggle);
         $btnSubmit.attr('disabled', toggle);
@@ -59,8 +60,14 @@
     });
 
     socket.on('got_msg', function(data) {
-        if (!document.hasFocus()) notification.play();
+        if (!document.hasFocus()) {
+            notification.play();
+        }
         insertMessage(data, false);
+    });
+
+    $(window).on('focus', function() {
+        cancelFlashTitle();
     });
 
     socket.on('partner_left', function() {

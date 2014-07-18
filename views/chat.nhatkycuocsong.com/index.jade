@@ -17,13 +17,15 @@ block head
             ga('send', 'pageview');
 
 block content
-    h1 Chat với người lạ
+    h1
+        span.hidden-xs Chat với người lạ
         button#btn-new.btn.btn-info Tìm người chat
+        div.visible-xs.online.btn.btn-warning#online-title
         iframe(src="http://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fchat.nhatkycuocsong.com&width=500&layout=standard&action=like&show_faces=false&share=true",style="border:none; overflow:hidden; height:20px;margin-left: 20px;")
     #wrapper
         #content
         #status Sẵn sàng, bấm nút <strong>Tìm người chat</strong> để bắt đầu
-        #online
+        .online.hidden-xs#online-status
         #control
             #chat-input
                 textarea#txt-input.form-control
