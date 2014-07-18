@@ -7,3 +7,9 @@
     border: 1px solid #ccc;
     background: #fff;
 }
+
+@media (max-width: 767px) {
+    #list-news {
+        display: none;
+    }
+}
